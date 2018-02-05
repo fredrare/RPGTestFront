@@ -96,7 +96,7 @@ start.onclick = function () {
 
     // Connect to socket
 
-    socket = io.connect('https:/rpg.fredrare.com');
+    socket = io.connect('https://rpg.fredrare.com');
     socket.on('connect',
               function() {
                 print('Connected.');
