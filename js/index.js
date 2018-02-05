@@ -1,15 +1,12 @@
 function print (msg) {
   console.log(msg);
 }
+$('#nickname').modal('show')
 // Create the canvas
-$('.modal').modal();
-$('#nickname').modal('open');
-document.getElementById("start").autofocus = true;
-
 var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
-var MAP_WIDTH = $('#game').width();
-var MAP_HEIGHT = 700;
+var MAP_WIDTH = 700;
+var MAP_HEIGHT = 500;
 
 canvas.width = MAP_WIDTH;
 canvas.height = MAP_HEIGHT;
@@ -60,7 +57,7 @@ let old = {};
 
 // Create the render function
 function render () {
-  ctx.fillStyle = "#CC2EFA";
+  ctx.fillStyle = "white";
   ctx.fillRect(0,0,MAP_WIDTH,MAP_HEIGHT);
   for (let key in players){
     if(players.hasOwnProperty(key)){
