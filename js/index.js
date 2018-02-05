@@ -1,7 +1,6 @@
 function print (msg) {
   console.log(msg);
 }
-
 // Create the canvas
 var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
@@ -27,19 +26,13 @@ var then;
 // Handle keyboard controls
 var keysDown = {};
 
-addEventListener("keydown",
-                 function (e) {
-                   keysDown[e.keyCode] = true;
-                 }, false);
+addEventListener("keydown", function (e) {keysDown[e.keyCode] = true;}, false);
 
-addEventListener("keyup",
-                 function (e) {
-                   delete keysDown[e.keyCode];
-                 }, false);
+addEventListener("keyup", function (e) { delete keysDown[e.keyCode]; }, false);
 
 // Create the update function
 function update (modifier) {
-  let old = {};
+let old = {};
   old.x = user.x;
   old.y = user.y;
   if (38 in keysDown && user.y > 0) { // Player holding up
@@ -100,9 +93,9 @@ start.onclick = function () {
     players[id] = user;
     document.body.appendChild(canvas);
     started = true;
-    
+
     // Connect to socket
-    
+
     socket = io.connect('https:/rpg.fredrare.com');
     socket.on('connect',
               function() {
