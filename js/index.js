@@ -2,10 +2,15 @@ function print (msg) {
   console.log(msg);
 }
 // Create the canvas
+$('.modal').modal();
+$('#nickname').modal('open');
+document.getElementById("start").autofocus = true;
+
 var canvas = document.createElement('canvas');
 var ctx = canvas.getContext('2d');
-var MAP_WIDTH = 500;
-var MAP_HEIGHT = 500;
+var MAP_WIDTH = $('#game').width();
+var MAP_HEIGHT = 700;
+
 canvas.width = MAP_WIDTH;
 canvas.height = MAP_HEIGHT;
 
@@ -55,7 +60,7 @@ let old = {};
 
 // Create the render function
 function render () {
-  ctx.fillStyle = "#9ea7b8";
+  ctx.fillStyle = "#CC2EFA";
   ctx.fillRect(0,0,MAP_WIDTH,MAP_HEIGHT);
   for (let key in players){
     if(players.hasOwnProperty(key)){
@@ -91,7 +96,8 @@ start.onclick = function () {
     user.x = coordinates (MAP_WIDTH);
     user.y = coordinates (MAP_HEIGHT);
     players[id] = user;
-    document.body.appendChild(canvas);
+    document.getElementById("game").appendChild(canvas);
+    //document.body.appendChild(canvas);
     started = true;
 
     // Connect to socket

@@ -12,19 +12,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   </head>
 
-  <body>
-    <div class="card-panel light-blue darken-4">
-      <div class="container ">
-        <div class="row">
-          <div class="col s3">
-            <div class="input-field col s6">
-               <input id="username" type="text" class="validate">
-               <label class="white-text text-darken-2" for="username">Enter a nickname</label>
-               <button id="start" class="waves-effect waves-light btn purple accent-4">Start</button>
-            </div>
+  <body bgcolor="black">
+    <!-- Modal Structure -->
+    <div id="nickname" class="modal">
+      <div class="modal-content blue darken-4">
+        <div class="input-field">
+          <input id="username" type="text" class="validate">
+          <label class="black-text text-darken-2" for="username">Enter a nickname</label>
+        </div>
+        <div align="center">
+          <button id="start" type="button" class="modal-action modal-close waves-effect waves-light btn purple accent-4">Start</button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="card-panel blue darken-4">
+        <h3>RPG Game v:</h3>
+      </div>
+      <div class="row">
+        <div class="col s8">
+          <div class="card-panel blue darken-4">
+            <div align="center" id="game"></div>
           </div>
-          <div class="col s9" id="game">
-            <!-- Teal page content  -->
+        </div>
+        <div class="col s4">
+          <div class="card-panel blue darken-4">
+            <h4>Chat</h4>
+            <div class="row">
+              <div class="col s9">
+                <div class="input-field">
+                  <input id="msg" type="text" class="validate">
+                  <label class="black-text text-darken-2" for="username">Text here</label>
+                </div>
+              </div>
+              <div class="col s3">
+                  <button type="button" id="chat"
+                  class="waves-effect waves-light btn purple accent-4"
+                  ><i class="material-icons">send</i></button>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
